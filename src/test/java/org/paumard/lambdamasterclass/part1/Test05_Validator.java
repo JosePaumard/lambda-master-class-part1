@@ -9,9 +9,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class Test05_Validator {
 
-    /**
-     *
-     */
+    /*
     @Test
     public void validator_1() {
 
@@ -24,9 +22,6 @@ public class Test05_Validator {
         assertThat(validator.validate(person).get()).isSameAs(person);
     }
 
-    /**
-     *
-     */
     @Test
     public void validator_2() {
 
@@ -42,9 +37,6 @@ public class Test05_Validator {
          validator.validate(person).get();
     }
 
-    /**
-     *
-     */
     @Test
     public void validator_3() {
 
@@ -60,9 +52,6 @@ public class Test05_Validator {
          validator.validate(person).get();
     }
 
-    /**
-     *
-     */
     @Test
     public void validator_4() {
 
@@ -77,4 +66,5 @@ public class Test05_Validator {
 
          validator.validate(person).get();
     }
+    */
 }
