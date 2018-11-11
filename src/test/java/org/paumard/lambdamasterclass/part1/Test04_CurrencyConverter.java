@@ -1,6 +1,5 @@
 package org.paumard.lambdamasterclass.part1;
 
-import org.assertj.core.api.Assertions;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 import org.paumard.lambdamasterclass.part1.util.CurrencyConverter;
