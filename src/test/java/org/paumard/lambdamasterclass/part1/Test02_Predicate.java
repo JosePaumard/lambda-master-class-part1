@@ -32,7 +32,7 @@ public class Test02_Predicate {
     @Test
     public void predicate_2() {
         Predicate<String> p1 = s -> s != null;
-        Predicate<String> p2 = s -> s.isEmpty();
+        Predicate<String> p2 = s -> !s.isEmpty();
 
         Predicate<String> p3 = null; // TODO
 
