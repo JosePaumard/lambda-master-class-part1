@@ -6,10 +6,17 @@ import org.paumard.lambdamasterclass.part1.util.Validator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class Test05_Validator {
 
     /*
+     * We planned to cover this example in the talk, but were lacking time
+     * to do it, so here is the solution.
+     * The first test validator_1 is green
+     * The 3 others are red, with a ValidatorException thrown
+     */
+
     @Test
     public void validator_1() {
 
@@ -34,7 +41,8 @@ public class Test05_Validator {
         assertThatExceptionOfType(Validator.ValidationException.class)
                 .isThrownBy(() -> validator.validate(person).get());
 
-         validator.validate(person).get();
+        assertThatThrownBy(() -> validator.validate(person).get())
+                .hasSuppressedException(new IllegalArgumentException("name is null"));
     }
 
     @Test
@@ -49,7 +57,9 @@ public class Test05_Validator {
         assertThatExceptionOfType(Validator.ValidationException.class)
                 .isThrownBy(() -> validator.validate(person).get());
 
-         validator.validate(person).get();
+        assertThatThrownBy(() -> validator.validate(person).get())
+                .hasSuppressedException(new IllegalArgumentException("name is null"))
+                .hasSuppressedException(new IllegalArgumentException("age is greater than 150"));
     }
 
     @Test
@@ -64,7 +74,7 @@ public class Test05_Validator {
         assertThatExceptionOfType(Validator.ValidationException.class)
                 .isThrownBy(() -> validator.validate(person).get());
 
-         validator.validate(person).get();
+        assertThatThrownBy(() -> validator.validate(person).get())
+                .hasSuppressedException(new IllegalArgumentException("age is negative"));
     }
-    */
 }
